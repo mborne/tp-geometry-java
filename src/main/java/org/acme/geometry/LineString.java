@@ -30,4 +30,13 @@ public class LineString implements Geometry{
 		return this.getNumPoints() == 0;
 	}
 	
+	public void translate(double dx, double dy) {
+		
+		for(Point point : points) {
+			point.translate(dx, dy);
+		}
+		
+		return;
+	}
+	
 }
