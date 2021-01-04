@@ -18,5 +18,29 @@ public class PointTest {
 		//assert
 		Assert.assertEquals("Point",typeP);
 	}
+	
+	@Test
+	public void testIsEmptyWithoutCoordinate() {
+		//arrange
+		Point p = new Point();
+		
+		//act
+		boolean b = p.isEmpty();
+		
+		//arrange
+		Assert.assertTrue(b);
+	}
+	
+	@Test
+	public void testIsEmptyWithCoordinate() {
+		//arrange
+		Point p = new Point(new Coordinate(1.0,1.0));
+		
+		//act
+		boolean b = p.isEmpty();
+		
+		//arrange
+		Assert.assertFalse(b);
+	}
 
 }

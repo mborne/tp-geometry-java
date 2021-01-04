@@ -72,5 +72,32 @@ public class LineStringTest {
 		//assert
 		Assert.assertEquals("LineString", typeLs);
 	}
+	
+	@Test
+	public void testIsEmptyWithoutPoint() {
+		//arrange
+		LineString ls = new LineString();
+		
+		//act
+		boolean b = ls.isEmpty();
+		
+		//assert
+		Assert.assertTrue(b);
+	}
+	
+	@Test
+	public void testIsEmptyWithPoint() {
+		//arrange
+		List<Point> points = new ArrayList<Point>();
+		points.add(new Point(new Coordinate(2.0,2.0)));
+		points.add(new Point(new Coordinate(1.0,6.0)));
+		LineString ls = new LineString(points);
+		
+		//act
+		boolean b = ls.isEmpty();
+		
+		//assert
+		Assert.assertFalse(b);
+	}
 
 }

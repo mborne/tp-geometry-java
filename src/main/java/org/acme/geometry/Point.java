@@ -18,4 +18,8 @@ public class Point implements Geometry{
 	public Coordinate getCoordinate() {
 		return this.coordinate;
 	}
+	
+	public boolean isEmpty() {
+		return this.coordinate.isEmpty();
+	}
 }
