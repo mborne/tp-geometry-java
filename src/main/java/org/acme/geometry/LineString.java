@@ -7,23 +7,23 @@ public class LineString implements Geometry{
 	private List<Point> points;
 	
 	public LineString() {
-		
+		this.points = new ArrayList<Point>();
 	}
 	
 	public LineString(List<Point> points) {
-		
+		this.points = points;
 	}
 	
 	public int getNumPoints() {
-		return 0;
+		return this.points.size();
 	}
 	
 	public Point getPointN(int n) {
-		return null;
+		return this.points.get(n);
 	}
 	
 	public String getType() {
-		return "";
+		return "LineString";
 	}
 	
 }
