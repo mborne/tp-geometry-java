@@ -59,5 +59,39 @@ public class PointTest {
 		Assert.assertEquals(5.0,px,EPSILON);
 		Assert.assertEquals(-4.0,py,EPSILON);
 	}
+	
+	@Test
+	public void testClone() {
+		//arrange 
+		Point firstPoint = new Point(new Coordinate(1.0,3.0));
+		
+		//act
+		Point secondPoint = firstPoint.clone();
+		double px = secondPoint.getCoordinate().getX();
+		double py = secondPoint.getCoordinate().getY();
+		
+		//assert
+		Assert.assertEquals(1.0,px,EPSILON);
+		Assert.assertEquals(3.0,py,EPSILON);
+		
+	}
+	
+	@Test
+	public void testCloneWithTranslate() {
+		//arrange 
+		Point firstPoint = new Point(new Coordinate(1.0,3.0));
+		
+		//act
+		Point secondPoint = firstPoint.clone();
+		secondPoint.translate(10.0,5.0);
+		double px = firstPoint.getCoordinate().getX();
+		double py = firstPoint.getCoordinate().getY();
+		
+		//assert
+		Assert.assertEquals(1.0,px,EPSILON);
+		Assert.assertEquals(3.0,py,EPSILON);
+		
+	}
+	
 
 }

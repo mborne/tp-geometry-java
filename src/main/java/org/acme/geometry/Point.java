@@ -29,4 +29,9 @@ public class Point implements Geometry{
 		
 		return;
 	}
+	
+	@Override
+	public Point clone() {
+		return new Point (new Coordinate(this.coordinate.getX(),this.coordinate.getY()));
+	}
 }

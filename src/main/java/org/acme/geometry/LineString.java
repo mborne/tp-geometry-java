@@ -39,4 +39,8 @@ public class LineString implements Geometry{
 		return;
 	}
 	
+	public Geometry clone() {
+		return null;
+	}
+	
 }

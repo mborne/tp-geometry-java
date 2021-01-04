@@ -119,5 +119,10 @@ public class LineStringTest {
 		Assert.assertEquals(5.0,px,EPSILON);
 		Assert.assertEquals(1.0,py,EPSILON);
 	}
+	
+	@Test
+	public void testClone() {
+		fail("not yet implemented");
+	}
 
 }
