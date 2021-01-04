@@ -99,5 +99,25 @@ public class LineStringTest {
 		//assert
 		Assert.assertFalse(b);
 	}
+	
+	@Test
+	public void testTranslateHappyPath() {
+		//arrange
+		//arrange
+		List<Point> points = new ArrayList<Point>();
+		points.add(new Point(new Coordinate(2.0,2.0)));
+		points.add(new Point(new Coordinate(1.0,6.0)));
+		LineString ls = new LineString(points);
+		
+		//act
+		ls.translate(4.0,-5.0);
+		Point p = ls.getPointN(1);
+		double px = p.getCoordinate().getX();
+		double py = p.getCoordinate().getY();
+		
+		//assert
+		Assert.assertEquals(5.0,px,EPSILON);
+		Assert.assertEquals(1.0,py,EPSILON);
+	}
 
 }

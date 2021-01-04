@@ -6,7 +6,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class PointTest {
-
+	
+	public static final double EPSILON = 1.0e-15;
+	
 	@Test
 	public void testGetType() {
 		//arrange
@@ -41,6 +43,21 @@ public class PointTest {
 		
 		//arrange
 		Assert.assertFalse(b);
+	}
+	
+	@Test
+	public void testTranslateHappyPath() {
+		//arrange
+		Point p = new Point(new Coordinate(1.0,1.0));
+		
+		//act
+		p.translate(4.0,-5.0);
+		double px = p.getCoordinate().getX();
+		double py = p.getCoordinate().getY();
+		
+		//arrange
+		Assert.assertEquals(5.0,px,EPSILON);
+		Assert.assertEquals(-4.0,py,EPSILON);
 	}
 
 }
