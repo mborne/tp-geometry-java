@@ -49,4 +49,12 @@ public class LineString implements Geometry{
 		return new LineString(pointsClone);
 	}
 	
+	public Envelope getEnvelope() {
+		EnvelopeBuilder builder = new EnvelopeBuilder();
+		for(Point point : this.points) {
+			builder.insert(point.getCoordinate());
+		}
+		return builder.build();
+	}
+	
 }
