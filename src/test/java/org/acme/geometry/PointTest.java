@@ -105,10 +105,10 @@ public class PointTest {
 		
 		//assert
 		Assert.assertFalse(e.isEmpty());
-		Assert.assertEquals(4.0, e.getXmin());
-		Assert.assertEquals(4.0, e.getXmax());
-		Assert.assertEquals(-3.0, e.getYmin());
-		Assert.assertEquals(-3.0, e.getYmax());
+		Assert.assertEquals(4.0, e.getXmin(),EPSILON);
+		Assert.assertEquals(4.0, e.getXmax(),EPSILON);
+		Assert.assertEquals(-3.0, e.getYmin(),EPSILON);
+		Assert.assertEquals(-3.0, e.getYmax(),EPSILON);
 	}
 
 }
