@@ -36,7 +36,7 @@ public class PointTest {
 	@Test
 	public void testIsEmptyWithCoordinate() {
 		//arrange
-		Point p = new Point(new Coordinate(1.0,1.0));
+		Point p = SampleFactory.createPointM();
 		
 		//act
 		boolean b = p.isEmpty();
@@ -48,7 +48,7 @@ public class PointTest {
 	@Test
 	public void testTranslateHappyPath() {
 		//arrange
-		Point p = new Point(new Coordinate(1.0,1.0));
+		Point p = SampleFactory.createPointM();
 		
 		//act
 		p.translate(4.0,-5.0);
@@ -56,14 +56,14 @@ public class PointTest {
 		double py = p.getCoordinate().getY();
 		
 		//arrange
-		Assert.assertEquals(5.0,px,EPSILON);
-		Assert.assertEquals(-4.0,py,EPSILON);
+		Assert.assertEquals(8.0,px,EPSILON);
+		Assert.assertEquals(-8.0,py,EPSILON);
 	}
 	
 	@Test
 	public void testClone() {
 		//arrange 
-		Point firstPoint = new Point(new Coordinate(1.0,3.0));
+		Point firstPoint = SampleFactory.createPointM();
 		
 		//act
 		Point secondPoint = firstPoint.clone();
@@ -71,15 +71,16 @@ public class PointTest {
 		double py = secondPoint.getCoordinate().getY();
 		
 		//assert
-		Assert.assertEquals(1.0,px,EPSILON);
-		Assert.assertEquals(3.0,py,EPSILON);
+		Assert.assertNotSame(firstPoint,secondPoint);
+		Assert.assertEquals(4.0,px,EPSILON);
+		Assert.assertEquals(-3.0,py,EPSILON);
 		
 	}
 	
 	@Test
 	public void testCloneWithTranslate() {
 		//arrange 
-		Point firstPoint = new Point(new Coordinate(1.0,3.0));
+		Point firstPoint = SampleFactory.createPointM();
 		
 		//act
 		Point secondPoint = firstPoint.clone();
@@ -88,8 +89,9 @@ public class PointTest {
 		double py = firstPoint.getCoordinate().getY();
 		
 		//assert
-		Assert.assertEquals(1.0,px,EPSILON);
-		Assert.assertEquals(3.0,py,EPSILON);
+		Assert.assertNotSame(firstPoint,secondPoint);
+		Assert.assertEquals(4.0,px,EPSILON);
+		Assert.assertEquals(-3.0,py,EPSILON);
 		
 	}
 	

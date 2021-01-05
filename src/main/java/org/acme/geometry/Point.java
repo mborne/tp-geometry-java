@@ -2,9 +2,10 @@ package org.acme.geometry;
 
 public class Point implements Geometry{
 	private Coordinate coordinate;
+	private final String TYPE = "Point"; 
 	
 	public String getType() {
-		return "Point";
+		return TYPE;
 	} 
 	
 	public Point() {
@@ -25,7 +26,10 @@ public class Point implements Geometry{
 	
 	public void translate(double dx, double dy) {
 		
-		this.coordinate = new Coordinate(this.getCoordinate().getX()+dx,this.getCoordinate().getY()+dy);
+		this.coordinate = new Coordinate(
+				this.getCoordinate().getX()+dx,
+				this.getCoordinate().getY()+dy
+				);
 		
 		return;
 	}
