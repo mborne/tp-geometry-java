@@ -28,10 +28,7 @@ public class LineStringTest {
 	@Test
 	public void testGetNumPointsNoEmptyPoints() {
 		//arrange
-		List<Point> p = new ArrayList<Point>();
-		p.add(new Point(new Coordinate(2.0,2.0)));
-		p.add(new Point(new Coordinate(1.0,6.0)));
-		LineString ls = new LineString(p);
+		LineString ls = SampleFactory.createLineStringOM();
 		
 		//act
 		int num = ls.getNumPoints();
@@ -43,10 +40,7 @@ public class LineStringTest {
 	@Test
 	public void testGetPointNHappyPath() {
 		//arrange
-		List<Point> points = new ArrayList<Point>();
-		points.add(new Point(new Coordinate(2.0,2.0)));
-		points.add(new Point(new Coordinate(1.0,6.0)));
-		LineString ls = new LineString(points);
+		LineString ls = SampleFactory.createLineStringOM();
 		
 		//act
 		Point p = ls.getPointN(1);
@@ -54,17 +48,14 @@ public class LineStringTest {
 		double py = p.getCoordinate().getY();
 		
 		//assert
-		Assert.assertEquals(1.0,px,EPSILON);
-		Assert.assertEquals(6.0,py,EPSILON);
+		Assert.assertEquals(4.0,px,EPSILON);
+		Assert.assertEquals(-3.0,py,EPSILON);
 	}
 	
 	@Test
 	public void testGetType() {
 		//arrange
-		List<Point> points = new ArrayList<Point>();
-		points.add(new Point(new Coordinate(2.0,2.0)));
-		points.add(new Point(new Coordinate(1.0,6.0)));
-		LineString ls = new LineString(points);
+		LineString ls = SampleFactory.createLineStringOM();
 		
 		//act
 		String typeLs = ls.getType();
@@ -88,10 +79,7 @@ public class LineStringTest {
 	@Test
 	public void testIsEmptyWithPoint() {
 		//arrange
-		List<Point> points = new ArrayList<Point>();
-		points.add(new Point(new Coordinate(2.0,2.0)));
-		points.add(new Point(new Coordinate(1.0,6.0)));
-		LineString ls = new LineString(points);
+		LineString ls = SampleFactory.createLineStringOM();
 		
 		//act
 		boolean b = ls.isEmpty();
@@ -103,11 +91,7 @@ public class LineStringTest {
 	@Test
 	public void testTranslateHappyPath() {
 		//arrange
-		//arrange
-		List<Point> points = new ArrayList<Point>();
-		points.add(new Point(new Coordinate(2.0,2.0)));
-		points.add(new Point(new Coordinate(1.0,6.0)));
-		LineString ls = new LineString(points);
+		LineString ls = SampleFactory.createLineStringOM();
 		
 		//act
 		ls.translate(4.0,-5.0);
@@ -116,8 +100,27 @@ public class LineStringTest {
 		double py = p.getCoordinate().getY();
 		
 		//assert
-		Assert.assertEquals(5.0,px,EPSILON);
-		Assert.assertEquals(1.0,py,EPSILON);
+		Assert.assertEquals(8.0,px,EPSILON);
+		Assert.assertEquals(-8.0,py,EPSILON);
+	}
+	
+	@Test
+	public void testClone() {
+		//arrange
+		LineString ls = SampleFactory.createLineStringOM();
+		
+		//act
+		LineString lsClone = ls.clone();
+		lsClone.translate(1.0, 2.0);
+		Point o1 = ls.getPointN(0);
+		Point m1 = ls.getPointN(1);
+		Point o2 = lsClone.getPointN(0);
+		Point m2 = lsClone.getPointN(1);
+		
+		//assert
+		Assert.assertNotSame(ls,lsClone);
+		Assert.assertNotSame(o1.getCoordinate(),o2.getCoordinate());
+		Assert.assertNotSame(m1.getCoordinate(),m2.getCoordinate());
 	}
 
 }

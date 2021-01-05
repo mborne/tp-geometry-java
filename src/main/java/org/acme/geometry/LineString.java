@@ -5,12 +5,14 @@ import java.util.List;
 public class LineString implements Geometry{
 	
 	private List<Point> points;
+	private final String TYPE = "LineString";
 	
 	public LineString() {
 		this.points = new ArrayList<Point>();
 	}
 	
 	public LineString(List<Point> points) {
+		assert(points != null);
 		this.points = points;
 	}
 	
@@ -23,7 +25,7 @@ public class LineString implements Geometry{
 	}
 	
 	public String getType() {
-		return "LineString";
+		return TYPE;
 	}
 	
 	public boolean isEmpty() {
@@ -37,6 +39,14 @@ public class LineString implements Geometry{
 		}
 		
 		return;
+	}
+	
+	public LineString clone() {
+		List<Point> pointsClone = new ArrayList<Point>();
+		for(Point point : this.points) {
+			pointsClone.add(point.clone());
+		}
+		return new LineString(pointsClone);
 	}
 	
 }
