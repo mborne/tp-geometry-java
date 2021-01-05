@@ -57,7 +57,7 @@ public class WktWriterTest {
 		String str = wkt.write(ls);
 				
 		//assert
-		Assert.assertEquals("LINESTRING (0.0 0.0,4.0 -3.0)",str);
+		Assert.assertEquals("LINESTRING(0.0 0.0,4.0 -3.0)",str);
 	}
 
 }
