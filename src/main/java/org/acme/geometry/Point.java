@@ -38,4 +38,8 @@ public class Point implements Geometry{
 	public Point clone() {
 		return new Point (new Coordinate(this.coordinate.getX(),this.coordinate.getY()));
 	}
+	
+	public Envelope getEnvelope() {
+		return null;
+	}
 }

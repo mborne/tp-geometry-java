@@ -95,5 +95,20 @@ public class PointTest {
 		
 	}
 	
+	@Test
+	public void testGetEnvelope() {
+		//arrange
+		Point p = SampleFactory.createPointM();
+		
+		//act
+		Envelope e = p.getEnvelope();
+		
+		//assert
+		Assert.assertFalse(e.isEmpty());
+		Assert.assertEquals(4.0, e.getXmin());
+		Assert.assertEquals(4.0, e.getXmax());
+		Assert.assertEquals(-3.0, e.getYmin());
+		Assert.assertEquals(-3.0, e.getYmax());
+	}
 
 }

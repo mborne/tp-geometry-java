@@ -49,4 +49,8 @@ public class LineString implements Geometry{
 		return new LineString(pointsClone);
 	}
 	
+	public Envelope getEnvelope() {
+		return null;
+	}
+	
 }

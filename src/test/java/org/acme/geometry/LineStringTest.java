@@ -122,5 +122,21 @@ public class LineStringTest {
 		Assert.assertNotSame(o1.getCoordinate(),o2.getCoordinate());
 		Assert.assertNotSame(m1.getCoordinate(),m2.getCoordinate());
 	}
+	
+	@Test
+	public void testGetEnvelope() {
+		//arrange
+		LineString ls = SampleFactory.createLineStringOMAE();
+		
+		//act
+		Envelope e = ls.getEnvelope();
+		
+		//assert
+		Assert.assertFalse(e.isEmpty());
+		Assert.assertEquals(0.0,e.getXmin());
+		Assert.assertEquals(-3.0,e.getYmin());
+		Assert.assertEquals(6.5,e.getXmax());
+		Assert.assertEquals(2.0,e.getYmax());
+	}
 
 }
