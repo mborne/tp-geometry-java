@@ -6,30 +6,32 @@ public class Envelope {
 	private Coordinate topRight;
 	
 	public Envelope() {
-		
+		this.bottomLeft = new Coordinate();
+		this.topRight = new Coordinate();
 	}
 	
 	public Envelope(Coordinate bottomLeft, Coordinate topRight) {
-		
+		this.bottomLeft = bottomLeft;
+		this.topRight = topRight;
 	}
 	
 	public boolean isEmpty() {
-		return false;
+		return this.bottomLeft.isEmpty() || this.topRight.isEmpty();
 	}
 	
 	public double getXmin() {
-		return Double.NaN;
+		return bottomLeft.getX();
 	}
 	
 	public double getXmax() {
-		return Double.NaN;
+		return this.topRight.getX();
 	}
 	
 	public double getYmin() {
-		return Double.NaN;
+		return this.bottomLeft.getY();
 	}
 	
 	public double getYmax() {
-		return Double.NaN;
+		return this.topRight.getY();
 	}
 }
