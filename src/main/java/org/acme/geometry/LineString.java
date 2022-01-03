@@ -45,5 +45,20 @@ public class LineString implements Geometry {
 
     }
 
+    @Override
+    public void translate(Double dx, Double dy){
+
+        for (Point point : points) {
+
+            point.translate(dx, dy);
+            
+        }
+
+        
+
+        
+
+    }
+
     
 }
