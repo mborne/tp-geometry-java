@@ -17,6 +17,15 @@ public class Point implements Geometry {
 		// TODO Auto-generated method stub
 		return "Point";
 	}
-	
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		if (coordinate.isEmpty() == true) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 }

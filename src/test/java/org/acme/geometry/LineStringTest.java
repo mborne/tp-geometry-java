@@ -21,8 +21,23 @@ public class LineStringTest {
 	public static  Point p3 = new Point(c3);
 	
 	@Test
-	public void testConstructor(){
+	public void testDefaultConstructor(){
 		LineString lS = new LineString();
+		
+		Assert.assertEquals("LineString", lS.getType());
+	}
+	
+	@Test
+	public void testConstructor(){
+		
+		List pts = new ArrayList<Point>();
+			
+		pts.add(p0);
+		pts.add(p1);
+		pts.add(p2);
+		pts.add(p3);
+		
+		LineString lS = new LineString(pts);
 		
 		Assert.assertEquals("LineString", lS.getType());
 	}
@@ -36,11 +51,7 @@ public class LineStringTest {
 		pts.add(p2);
 		pts.add(p3);
 		
-		LineString lS = new LineString();
-		
-		Assert.assertEquals(0,lS.getNumPoints(),EPSILON);
-		
-		lS.setPoints(pts);
+		LineString lS = new LineString(pts);
 		
 		Assert.assertEquals(pts.size(),lS.getNumPoints(),EPSILON);
 	}
@@ -54,10 +65,34 @@ public class LineStringTest {
 		pts.add(p2);
 		pts.add(p3);
 		
-		LineString lS = new LineString();
+		LineString lS = new LineString(pts);
 		
-		lS.setPoints(pts);
+		Assert.assertEquals(p2,lS.getPointN(2));
+	}
+	
+	@Test
+	public void testIsEmpty(){
 		
-		Assert.assertEquals(p3,lS.getPointN(2));
+		
+		Point pNull = new Point();
+		List ptsNull = new ArrayList<Point>();
+		ptsNull.add(pNull);
+		
+		LineString emptyLS = new LineString(ptsNull);
+		
+		Assert.assertEquals(false,emptyLS.isEmpty());
+		
+		List pts = new ArrayList<Point>();
+		
+		pts.add(p0);
+		pts.add(p1);
+		pts.add(p2);
+		pts.add(p3);
+		
+		LineString fullLS = new LineString(pts);
+		
+		System.out.println(fullLS.getNumPoints());
+		
+		Assert.assertEquals(false,fullLS.isEmpty());
 	}
 }

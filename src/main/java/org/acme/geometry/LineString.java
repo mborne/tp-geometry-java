@@ -22,14 +22,21 @@ public class LineString implements Geometry {
 		return points.get(n);
 	}
 
-	public void setPoints(List<Point> points) {
-		this.points = points;
-	}
-
 	@Override
 	public String getType() {
 		// TODO Auto-generated method stub
 		return "LineString";
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		if (points.isEmpty() != true) {
+			return false;
+		} else {
+			return true;
+		}
+		
 	}
 	
 }

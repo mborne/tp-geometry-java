@@ -1,12 +1,14 @@
 package org.acme.geometry;
 
 public class Coordinate {
-	private double x = 0.0;
-	private double y = 0.0;
+	private double x = 0;
+	private double y = 0;
 	
 	
 	public Coordinate() {
 		super();
+		this.x = Double.NaN;
+		this.y = Double.NaN;
 	}
 
 
@@ -24,6 +26,14 @@ public class Coordinate {
 
 	public double getY() {
 		return y;
+	}
+	
+	public boolean isEmpty() {
+		if (Double.isNaN(x) || Double.isNaN(y)) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 	
