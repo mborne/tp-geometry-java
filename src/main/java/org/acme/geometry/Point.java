@@ -9,12 +9,28 @@ public class Point implements Geometry {
     }
 
     public Point(Coordinate coordinate){
-        this.coordinate = coordinate;
+
+        if(coordinate == null){
+            this.coordinate = new Coordinate();
+        }
+        else{
+            this.coordinate = coordinate;
+        }
+    }
+
+    public Coordinate getCoordinate() {
+        return this.coordinate;
+        
     }
 
     @Override
     public String getType(){
         return "point";
+    }
+
+    @Override
+    public Boolean isEmpty(){
+        return this.coordinate.isEmpty();
     }
     
 }
