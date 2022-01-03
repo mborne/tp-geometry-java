@@ -5,5 +5,7 @@ public interface Geometry {
     String getType();
 
     Boolean isEmpty();
+
+    void translate(Double dx, Double dy);
     
 }
