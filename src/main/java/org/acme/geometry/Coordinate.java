@@ -29,10 +29,10 @@ public class Coordinate {
 	}
 	
 	public boolean isEmpty() {
-		if (Double.isNaN(x) || Double.isNaN(y)) {
-			return false;
-		} else {
+		if (Double.isNaN(x)) {
 			return true;
+		} else {
+			return false;
 		}
 	}
 	

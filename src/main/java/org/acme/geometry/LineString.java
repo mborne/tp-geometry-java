@@ -31,10 +31,10 @@ public class LineString implements Geometry {
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		if (points.isEmpty() != true) {
-			return false;
-		} else {
+		if (points == null) {
 			return true;
+		} else {
+			return false;
 		}
 		
 	}

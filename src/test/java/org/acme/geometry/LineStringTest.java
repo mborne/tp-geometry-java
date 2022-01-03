@@ -73,14 +73,9 @@ public class LineStringTest {
 	@Test
 	public void testIsEmpty(){
 		
+		LineString emptyLS = new LineString();
 		
-		Point pNull = new Point();
-		List ptsNull = new ArrayList<Point>();
-		ptsNull.add(pNull);
-		
-		LineString emptyLS = new LineString(ptsNull);
-		
-		Assert.assertEquals(false,emptyLS.isEmpty());
+		Assert.assertEquals(true,emptyLS.isEmpty());
 		
 		List pts = new ArrayList<Point>();
 		
@@ -90,8 +85,6 @@ public class LineStringTest {
 		pts.add(p3);
 		
 		LineString fullLS = new LineString(pts);
-		
-		System.out.println(fullLS.getNumPoints());
 		
 		Assert.assertEquals(false,fullLS.isEmpty());
 	}
