@@ -29,4 +29,15 @@ public class PointTest {
 		Point pFull = new Point(cFull);
 		Assert.assertEquals(pFull.isEmpty(),false);
 	}
+	
+	@Test
+	public void testTranslate(){
+		Coordinate cEmpty = new Coordinate();
+		Point pEpmty = new Point(cEmpty);
+		Assert.assertEquals(pEpmty.isEmpty(),true);
+		
+		Coordinate cFull = new Coordinate(0.0,0.0);
+		Point pFull = new Point(cFull);
+		Assert.assertEquals(pFull.isEmpty(),false);
+	}
 }
