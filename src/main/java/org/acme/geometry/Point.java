@@ -44,5 +44,17 @@ public class Point implements Geometry {
         this.coordinate =newCoordinate;
 
     }
+
+    @Override
+    public Point clone(){
+
+        Double x = this.coordinate.getX();
+        Double y = this.coordinate.getY();
+
+        Coordinate cClone = new Coordinate( x, y);
+        Point pClone = new Point(cClone);
+        
+        return pClone;
+    }
     
 }
