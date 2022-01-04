@@ -111,12 +111,21 @@ public class PointTest {
         ByteArrayOutputStream os = new ByteArrayOutputStream();
         PrintStream out = new PrintStream(os);
         GeometryVisitor visitor = new LogGeometryVisitor(out);
+        WktVisitor visitorWkt = new WktVisitor();
+        WktVisitor visitorWktEmpty = new WktVisitor();
 
         p1.accept(visitor);
+        p1.accept(visitorWkt);
+
+        Point pEmpty = new Point();
+        pEmpty.accept(visitorWktEmpty);
+        
 
         String result = os.toString("UTF8");
 
         Assert.assertEquals("Je suis un point avec x=0.1 et y=0.1", result);
+        Assert.assertEquals( "POINT(0.1 0.1)", visitorWkt.getResult());
+        Assert.assertEquals("POINT EMPTY", visitorWktEmpty.getResult());
 
 
 
