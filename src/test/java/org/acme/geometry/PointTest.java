@@ -1,5 +1,7 @@
 package org.acme.geometry;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -73,5 +75,23 @@ public class PointTest {
         Assert.assertEquals(0.1, p.getCoordinate().getY(), EPSILON);
         Assert.assertEquals(1.1, pClone.getCoordinate().getY(), EPSILON);
 
+    }
+
+    @Test
+    public void testGetEnvelope(){
+
+        Double x = 0.1;
+        Double y = 0.1;
+
+        Coordinate coordinate = new Coordinate( x, y);
+        Point point = new Point(coordinate);
+
+        Envelope envelope = point.getEnvelope();
+
+        Assert.assertEquals(false, envelope.isEmpty());
+        Assert.assertEquals(x, envelope.getXmax());
+        Assert.assertEquals(x, envelope.getXmin());
+        Assert.assertEquals(y, envelope.getYmax());
+        Assert.assertEquals(y, envelope.getYmin());
     }
 }

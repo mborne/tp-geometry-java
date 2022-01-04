@@ -9,5 +9,7 @@ public interface Geometry {
     void translate(Double dx, Double dy);
 
     Geometry clone();
+
+    Envelope getEnvelope();
     
 }

@@ -56,5 +56,16 @@ public class Point implements Geometry {
         
         return pClone;
     }
+
+    @Override
+    public Envelope getEnvelope(){
+
+        EnvelopeBuilder envelopeBuilder = new EnvelopeBuilder();
+
+        envelopeBuilder.insert(coordinate);
+        return envelopeBuilder.build();
+
+
+    }
     
 }
