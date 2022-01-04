@@ -25,7 +25,7 @@ public class Point implements Geometry {
 
     @Override
     public String getType(){
-        return "point";
+        return "POINT";
     }
 
     @Override

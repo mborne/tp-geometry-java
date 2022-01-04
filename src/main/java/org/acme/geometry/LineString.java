@@ -2,6 +2,7 @@ package org.acme.geometry;
 
 import java.util.ArrayList;
 
+
 public class LineString implements Geometry {
 
     private ArrayList<Point> points;
@@ -36,7 +37,7 @@ public class LineString implements Geometry {
 
     @Override
     public String getType(){
-        return "LineString";
+        return "LINESTRING";
     }
 
     @Override
