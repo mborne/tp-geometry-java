@@ -152,12 +152,22 @@ public class LineStringTest {
         PrintStream out = new PrintStream(os);
         GeometryVisitor visitor = new LogGeometryVisitor(out);
 
+        WktVisitor visitorWkt = new WktVisitor();
+        WktVisitor visitorWktEmpty = new WktVisitor();
+
         l.accept(visitor);
+
+        l.accept(visitorWkt);
+        
+        LineString lEmpty = new LineString();
+        lEmpty.accept(visitorWktEmpty);
 
         String result = os.toString("UTF8");
 
         Assert.assertEquals("Je suis une polyligne définie par 2 point(s)", result);
 
+        Assert.assertEquals("LINESTRING(0.1 0.1,0.1 0.1)", visitorWkt.getResult());
+        Assert.assertEquals("LINESTRING EMPTY", visitorWktEmpty.getResult());
 
 
     }
