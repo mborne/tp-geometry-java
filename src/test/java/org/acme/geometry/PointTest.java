@@ -1,6 +1,9 @@
 package org.acme.geometry;
 
-import static org.junit.Assert.assertEquals;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -93,5 +96,29 @@ public class PointTest {
         Assert.assertEquals(x, envelope.getXmin());
         Assert.assertEquals(y, envelope.getYmax());
         Assert.assertEquals(y, envelope.getYmin());
+    }
+
+    @Test
+    public void testAccept() throws UnsupportedEncodingException{
+
+        Double x = 0.1;
+        Double y = 0.1;
+
+        Coordinate c = new Coordinate(x, y);
+
+        Point p1 = new Point(c);
+
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        PrintStream out = new PrintStream(os);
+        GeometryVisitor visitor = new LogGeometryVisitor(out);
+
+        p1.accept(visitor);
+
+        String result = os.toString("UTF8");
+
+        Assert.assertEquals("Je suis un point avec x=0.1 et y=0.1", result);
+
+
+
     }
 }
