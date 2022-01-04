@@ -172,5 +172,36 @@ public class LineStringTest {
 
     }
 
+
+
+    @Test
+    public void testAsText(){
+
+
+        Double x = 0.1;
+        Double y = 0.1;
+
+        Coordinate c = new Coordinate(x, y);
+
+        Point p1 = new Point(c);
+        Point p2 = new Point(c);
+
+        ArrayList<Point> points = new ArrayList<Point>();
+        points.add(p1);
+        points.add(p2);
+
+        LineString l = new LineString(points);
+        
+        LineString lEmpty = new LineString();
+
+
+
+
+        Assert.assertEquals("LINESTRING(0.1 0.1,0.1 0.1)", l.asText());
+        Assert.assertEquals("LINESTRING EMPTY", lEmpty.asText());
+
+
+
+    }
     
 }
