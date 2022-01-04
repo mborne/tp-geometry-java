@@ -113,6 +113,7 @@ public class PointTest {
         GeometryVisitor visitor = new LogGeometryVisitor(out);
         WktVisitor visitorWkt = new WktVisitor();
         WktVisitor visitorWktEmpty = new WktVisitor();
+        EnvelopeBuilder envelopeBuilder = new EnvelopeBuilder();
 
         p1.accept(visitor);
         p1.accept(visitorWkt);

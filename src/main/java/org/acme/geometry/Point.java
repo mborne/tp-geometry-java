@@ -62,7 +62,8 @@ public class Point extends AbstractGeometry {
 
         EnvelopeBuilder envelopeBuilder = new EnvelopeBuilder();
 
-        envelopeBuilder.insert(coordinate);
+        this.accept(envelopeBuilder);
+        
         return envelopeBuilder.build();
 
 
