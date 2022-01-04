@@ -1,6 +1,5 @@
 package org.acme.geometry;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import org.junit.Assert;
@@ -98,7 +97,7 @@ public class LineStringTest {
         lClone.translate(dx,dy);
 
         Assert.assertEquals(1.1, lClone.getPointN(0).getCoordinate().getX(), EPSILON);
-        Assert.assertEquals(0.1, l.getPointN(0).getCoordinate().getY(), EPSILON);
+        Assert.assertEquals(0.1, l.getPointN(0).getCoordinate().getX(), EPSILON);
 
 
     }
