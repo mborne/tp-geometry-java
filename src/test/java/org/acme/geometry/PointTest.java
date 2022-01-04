@@ -130,4 +130,27 @@ public class PointTest {
 
 
     }
+
+    @Test
+    public void testAsText(){
+
+
+        Double x = 0.1;
+        Double y = 0.1;
+
+        Coordinate c = new Coordinate(x, y);
+
+        Point p1 = new Point(c);
+
+        Point pEmpty = new Point();
+
+
+
+
+        Assert.assertEquals( "POINT(0.1 0.1)", p1.asText());
+        Assert.assertEquals("POINT EMPTY", pEmpty.asText());
+
+
+
+    }
 }
