@@ -79,11 +79,8 @@ public class LineString extends AbstractGeometry {
     public Envelope getEnvelope(){
 
         EnvelopeBuilder envelopeBuilder = new EnvelopeBuilder();
-        for (Point point : points) {
 
-            envelopeBuilder.insert(point.getCoordinate());
-            
-        }
+        this.accept(envelopeBuilder);
 
         return envelopeBuilder.build();
     }

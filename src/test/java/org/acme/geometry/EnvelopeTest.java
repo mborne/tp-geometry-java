@@ -1,7 +1,5 @@
 package org.acme.geometry;
 
-import java.util.ArrayList;
-
 import org.junit.Assert;
 import org.junit.Test;
 
