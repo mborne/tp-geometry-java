@@ -9,12 +9,12 @@ public class PointTest {
     @Test
     public void testDefaultConstructor(){
         Point p = new Point();
-        Assert.assertEquals(0.0, p.getCoordinate().getX(), EPSILON);
-        Assert.assertEquals(0.0, p.getCoordinate().getY(), EPSILON);
+        Assert.assertEquals(Double.NaN, p.getCoordinate().getX(), EPSILON);
+        Assert.assertEquals(Double.NaN, p.getCoordinate().getY(), EPSILON);
     }
     @Test
     public void testConstructorXY(){
-        Coordinate c = new Coordinate(3.0,4.0);
+        Coordinate c = GeometryFactory.createCoordinate();
         Point p = new Point(c);
         Assert.assertSame(c, p.getCoordinate());
 
@@ -24,5 +24,11 @@ public class PointTest {
     public void testGetType(){
         Point p = new Point();
         Assert.assertEquals("Point", p.getType());
+    }
+
+    @Test
+    public void testIsEmpty(){
+        Point p = new Point();
+        Assert.assertTrue(p.isEmpty());
     }
 }

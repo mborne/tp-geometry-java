@@ -3,6 +3,7 @@ package org.acme.geometry;
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.sound.sampled.Line;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,5 +31,11 @@ public class LineStringTest {
     public void testGetType(){
        LineString ls = new LineString();
         Assert.assertEquals("LineString", ls.getType());
+    }
+
+    @Test
+    public void testIsEmpty(){
+        LineString ls = new LineString();
+        Assert.assertTrue(ls.isEmpty());
     }
 }
