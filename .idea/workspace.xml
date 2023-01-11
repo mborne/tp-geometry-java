@@ -5,13 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aeb88e17-212e-452e-b6aa-05f6548753f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acme/geometry/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acme/geometry/Coordinate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/geometry/Geometry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/geometry/LineString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acme/geometry/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/acme/geometry/GeometryFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/acme/geometry/LineStringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/acme/geometry/PointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/acme/geometry/CoordinateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acme/geometry/CoordinateTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,11 +38,6 @@
       <MavenGeneralSettings>
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2KBQjfub8ZP1Y7gGemsHhMIY0l2" />
@@ -43,8 +52,32 @@
     &quot;last_opened_file_path&quot;: &quot;/home/formation/Documents/Java_Design_Pattern/TP/tp-pattern-geometry&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.All in tp-pattern-geometry (1)">
+  <component name="RunManager" selected="JUnit.All in tp-pattern-geometry (4)">
     <configuration name="All in tp-pattern-geometry (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp-pattern-geometry" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in tp-pattern-geometry (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp-pattern-geometry" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in tp-pattern-geometry (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp-pattern-geometry" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in tp-pattern-geometry (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tp-pattern-geometry" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -62,6 +95,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in tp-pattern-geometry (4)" />
+        <item itemvalue="JUnit.All in tp-pattern-geometry (3)" />
+        <item itemvalue="JUnit.All in tp-pattern-geometry (2)" />
         <item itemvalue="JUnit.All in tp-pattern-geometry (1)" />
         <item itemvalue="JUnit.All in tp-pattern-geometry" />
       </list>
@@ -77,5 +113,11 @@
       <updated>1673445635233</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tp_pattern_geometry$All_in_tp_pattern_geometry__4_.ic" NAME="All in tp-pattern-geometry (4) Coverage Results" MODIFIED="1673453167660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/tp_pattern_geometry$All_in_tp_pattern_geometry__3_.ic" NAME="All in tp-pattern-geometry (3) Coverage Results" MODIFIED="1673452548756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/tp_pattern_geometry$All_in_tp_pattern_geometry__2_.ic" NAME="All in tp-pattern-geometry (2) Coverage Results" MODIFIED="1673452453897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/tp_pattern_geometry$All_in_tp_pattern_geometry__1_.ic" NAME="All in tp-pattern-geometry (1) Coverage Results" MODIFIED="1673449105473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
