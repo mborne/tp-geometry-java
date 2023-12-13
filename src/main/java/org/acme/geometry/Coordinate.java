@@ -25,5 +25,9 @@ public class Coordinate {
 	public boolean isEmpty() {
 		return Double.isNaN(this.x) || Double.isNaN(this.y);
 	}
+	
+	public String toString() {
+		return "["+this.x+","+this.y+"]";
+	}
 
 }

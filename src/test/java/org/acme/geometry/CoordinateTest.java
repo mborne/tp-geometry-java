@@ -8,21 +8,21 @@ public class CoordinateTest {
 	public static final double EPSILON = 1.0e-15;
 
 	@Test
-	public void testConstructorXY(){
+	public void testConstructorXY() {
 		Coordinate c = new Coordinate(3.0,4.0);
 		Assert.assertEquals(3.0, c.getX(), EPSILON);
 		Assert.assertEquals(4.0, c.getY(), EPSILON);
 	}
 
 	@Test
-	public void testConstructorEmpty(){
+	public void testConstructorEmpty() {
 		Coordinate c = new Coordinate();
 		Assert.assertEquals(Double.NaN, c.getX(), EPSILON);
 		Assert.assertEquals(Double.NaN, c.getY(), EPSILON);
 	}
 
 	@Test
-	public void testEmpty(){
+	public void testEmpty() {
 		Coordinate c = new Coordinate();
 		Assert.assertTrue(c.isEmpty());
 
@@ -37,6 +37,14 @@ public class CoordinateTest {
 		
 		Coordinate c5 = new Coordinate(Double.NaN, 0.0);
 		Assert.assertTrue(c5.isEmpty());
-}
+	}
+	
+	@Test
+	public void testToString() {
+		Coordinate c = new Coordinate();
+		Assert.assertEquals("[NaN,NaN]", c.toString());
+		Coordinate c2 = new Coordinate(1.5, 8.4);
+		Assert.assertEquals("[1.5,8.4]", c2.toString());
+	}
 
 }
