@@ -21,4 +21,10 @@ public class CoordinateTest {
 		Assert.assertEquals(Double.NaN, c.getY(), EPSILON);
 	}
 
+	@Test
+	public void testEmpty(){
+		Coordinate c = new Coordinate();
+		Assert.assertEquals(c.isEmpty(), true);
+	}
+
 }
