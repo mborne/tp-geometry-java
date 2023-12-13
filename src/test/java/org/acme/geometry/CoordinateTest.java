@@ -24,7 +24,13 @@ public class CoordinateTest {
 	@Test
 	public void testEmpty(){
 		Coordinate c = new Coordinate();
-		Assert.assertEquals(c.isEmpty(), true);
+		Assert.assertTrue(c.isEmpty());
+
+		Coordinate c2 = new Coordinate(3.4, 7.2);
+		Assert.assertFalse(c.isEmpty());
+
+		Coordinate c3 = new Coordinate(0.0, 0.0);
+		Assert.assertFalse(c.isEmpty());
 	}
 
 }
