@@ -23,7 +23,7 @@ public class Coordinate {
 	}
 	
 	public boolean isEmpty() {
-		return false;
+		return Double.isNaN(this.x) || Double.isNaN(this.y);
 	}
 
 }

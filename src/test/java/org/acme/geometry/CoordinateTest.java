@@ -27,10 +27,16 @@ public class CoordinateTest {
 		Assert.assertTrue(c.isEmpty());
 
 		Coordinate c2 = new Coordinate(3.4, 7.2);
-		Assert.assertFalse(c.isEmpty());
+		Assert.assertFalse(c2.isEmpty());
 
 		Coordinate c3 = new Coordinate(0.0, 0.0);
-		Assert.assertFalse(c.isEmpty());
-	}
+		Assert.assertFalse(c3.isEmpty());
+
+		Coordinate c4 = new Coordinate(0.0, Double.NaN);
+		Assert.assertTrue(c4.isEmpty());
+		
+		Coordinate c5 = new Coordinate(Double.NaN, 0.0);
+		Assert.assertTrue(c5.isEmpty());
+}
 
 }
