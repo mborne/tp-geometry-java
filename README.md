@@ -1,8 +1,12 @@
-# tp-pattern-geometry
+# tp-geometry-java
 
 ## Description
 
-Projet de démarrage pour le [TP - Mise en oeuvre des patterns sur des Geometry](http://mborne.github.io/cours-patron-conception/annexe/tp-geometry/index.html) associé au cours sur [les patrons de conception](http://mborne.github.io/cours-patron-conception/)
+Projet de démarrage pour le [TP - Mise en oeuvre des patterns sur des Geometry](https://github.com/mborne/cours-patron-conception/blob/archive-java/src/annexe/tp-geometry/index.md) associé au cours sur [les patrons de conception](http://mborne.github.io/cours-patron-conception/)
+
+## Mise en garde
+
+Ce dépôt est une **archive correspondant à la version Java du TP**.
 
 ## Principes
 
